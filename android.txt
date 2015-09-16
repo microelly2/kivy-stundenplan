@@ -1,0 +1,3 @@
+title=Stundenplanung v 1.0.3
+author=microelly
+orientation=

@@ -1,0 +1,102 @@
+#:kivy 1.0
+# -*- coding: utf-8 -*-
+#-------------------------------------------------
+#-- plugin loader
+#--
+#-- microelly 2015
+#--
+#-- GNU Lesser General Public License (LGPL)
+#-------------------------------------------------
+
+<stundenplan>:
+	tag:tag
+	tagebuts:tagebuts
+	BoxLayout:
+		orientation: 'vertical'
+		BoxLayout:
+			orientation: 'vertical'
+			id: tag
+			Label:
+				size_hint_y: None
+				height:20
+			TextInput:
+				on_text: app.validate(self,1)
+				on_focus: app.focus(self,1)
+				font_size:20
+			Label:
+				size_hint_y: None
+				height:20
+			TextInput:
+				font_size:20
+				on_text: app.validate(self,2)
+				on_focus: app.focus(self,2)
+			Label:
+				height:20
+				size_hint_y: None
+			TextInput:
+				font_size:20
+				on_text: app.validate(self,3)
+				on_focus: app.focus(self,3)
+			Label:
+				height:20
+				size_hint_y: None
+			TextInput:
+				font_size:20
+				on_text: app.validate(self,4)
+				on_focus: app.focus(self,4)
+			Label:
+				height:20
+				size_hint_y: None
+			TextInput:
+				font_size:20
+				on_text: app.validate(self,5)
+				on_focus: app.focus(self,5)
+			Label:
+				height:20
+				size_hint_y: None
+			TextInput:
+				font_size:20
+				on_text: app.validate(self,6)
+				on_focus: app.focus(self,6)
+		BoxLayout:
+			size_hint_y: None
+			height:50
+			orientation: 'horizontal'
+			id: tagebuts
+			Button:
+				font_size:18
+				on_press: app.leseTagDatei(-1)
+			Button:
+				font_size:18
+				on_press: app.leseTagDatei(0)
+				background_color: 1,1,0,1
+			Button:
+				font_size:20
+				on_press: app.leseTagDatei(1)
+			Button:
+				font_size:18
+				on_press: app.leseTagDatei(2)
+			Button:
+				font_size:18
+				on_press: app.leseTagDatei(3)
+			Button:
+				font_size:18
+				on_press: app.leseTagDatei(4)
+			Button:
+				font_size:18
+				on_press: app.leseTagDatei(5)
+		BoxLayout:
+			orientation:'horizontal'
+			size_hint_y: None
+			height:150
+			height:280
+			Button:
+				text: 'Termine'
+			Button:
+				text: 'Planung \nund\nLogbuch\nUnterricht'
+				on_press: app.leseTagDatei(0)
+				size_hint_y: None
+				height:150
+				height:280
+			Button:
+				text: 'Hausaufgaben'
